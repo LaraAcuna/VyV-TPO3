@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.acunapuchetavv.PlantacionTests" time="0.168" tests="43" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Documents_hdd\Estudio\FACULTAD\QUINTO AÑO\Primer Cuatrimestre\Verificación y Validación de SW\Práctica\TPO2\testingunidad\target\test-classes;D:\Documents_hdd\Estudio\FACULTAD\QUINTO AÑO\Primer Cuatrimestre\Verificación y Validación de SW\Práctica\TPO2\testingunidad\target\classes;C:\Users\Lara\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\Lara\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\Lara\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Lara\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\Lara\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\Lara\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://access.redhat.com/"/>
+    <property name="user.timezone" value="America/Buenos_Aires"/>
+    <property name="user.country.format" value="AR"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\RedHat\java-21-openjdk-21.0.2.0.13-2\bin"/>
+    <property name="sun.java.command" value="C:\Users\Lara\AppData\Local\Temp\surefire8292523232809518359\surefirebooter-20240528094859967_3.jar C:\Users\Lara\AppData\Local\Temp\surefire8292523232809518359 2024-05-28T09-48-59_748-jvmRun1 surefire-20240528094859967_1tmp surefire_0-20240528094859967_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Documents_hdd\Estudio\FACULTAD\QUINTO AÑO\Primer Cuatrimestre\Verificación y Validación de SW\Práctica\TPO2\testingunidad\target\test-classes;D:\Documents_hdd\Estudio\FACULTAD\QUINTO AÑO\Primer Cuatrimestre\Verificación y Validación de SW\Práctica\TPO2\testingunidad\target\classes;C:\Users\Lara\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.1\junit-jupiter-engine-5.9.1.jar;C:\Users\Lara\.m2\repository\org\junit\platform\junit-platform-engine\1.9.1\junit-platform-engine-1.9.1.jar;C:\Users\Lara\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Lara\.m2\repository\org\junit\platform\junit-platform-commons\1.9.1\junit-platform-commons-1.9.1.jar;C:\Users\Lara\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.1\junit-jupiter-api-5.9.1.jar;C:\Users\Lara\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Lara"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Program Files\RedHat\java-21-openjdk-21.0.2.0.13-2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Documents_hdd\Estudio\FACULTAD\QUINTO AÑO\Primer Cuatrimestre\Verificación y Validación de SW\Práctica\TPO2\testingunidad"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Lara\AppData\Local\Temp\surefire8292523232809518359\surefirebooter-20240528094859967_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-LTS"/>
+    <property name="user.name" value="Lara"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-21.0.2.0+13-2)"/>
+    <property name="localRepository" value="C:\Users\Lara\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi"/>
+    <property name="java.io.tmpdir" value="C:\Users\Lara\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="D:\Documents_hdd\Estudio\FACULTAD\QUINTO AÑO\Primer Cuatrimestre\Verificación y Validación de SW\Práctica\TPO2\testingunidad"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.language.format" value="es"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\RedHat\java-21-openjdk-21.0.2.0.13-2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python312\Scripts\;C:\Python312\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Git\cmd;d:\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\RedHat\java-21-openjdk-21.0.2.0.13-2\bin;C:\Program Files (x86)\apache-maven-3.9.6\bin;C:\Users\Lara\AppData\Local\Microsoft\WindowsApps;;C:\Users\Lara\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Lara\AppData\Roaming\npm;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="21.0.2+13-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="calcularEstadoLimiteMenosVeinteDaEstadoConReserva" classname="com.acunapuchetavv.PlantacionTests" time="0.032"/>
+  <testcase name="addCultivosAceptado" classname="com.acunapuchetavv.PlantacionTests" time="0.007"/>
+  <testcase name="deleteParcelaAceptado" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="getCultivos" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="deleteCultivosAceptado" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="transicionValidaImproductivoAProductivo" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="deleteParcelaInvalidoCeroMetros" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="TransicionInvalida" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="addParcelaRechazado" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="calcularEstadoNaN" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="getMetrosTotales" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="deleteCultivosInvalidoExcede" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="addCultivosRechazado" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="deleteParcelaRechazado" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="TransicionInvalidaNaN" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="calcularPo" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="getParcelas" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="Plantacion" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="permitirCambioCultivosTrue" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="getMetrosOcupados" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="transicionValidaConReservaAExcedido" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="permitirCambioCultivosValorLimiteFalse" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="deleteCultivosValorLimiteCero" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="cantidadTipoParcelaMediana" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="calcularEstadoDaEstadoConReserva" classname="com.acunapuchetavv.PlantacionTests" time="0.0"/>
+  <testcase name="getEstado" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="deleteParcelaInvalidoMetros" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="cantidadTipoParcelaGrande" classname="com.acunapuchetavv.PlantacionTests" time="0.0"/>
+  <testcase name="calcularEstadoLimiteCeroDaEstadoProductivo" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="calcularEstadoDaEstadoImproductivo" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="addCultivosInvalido" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="deleteParcelaInvalido" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="transicionValidaProductivoAConReserva" classname="com.acunapuchetavv.PlantacionTests" time="0.0"/>
+  <testcase name="deleteCultivosInvalido" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="deleteCultivosRechazado" classname="com.acunapuchetavv.PlantacionTests" time="0.0"/>
+  <testcase name="cantidadTipoParcelaInvalido" classname="com.acunapuchetavv.PlantacionTests" time="0.0"/>
+  <testcase name="permitirCambioCultivosFalse" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="calcularEstadoLimiteDaEstadoProductivo" classname="com.acunapuchetavv.PlantacionTests" time="0.0"/>
+  <testcase name="calcularEstadoDaEstadoProductivo" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="cantidadTipoParcelaChica" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="calcularEstadoDaEstadoExcedido" classname="com.acunapuchetavv.PlantacionTests" time="0.002"/>
+  <testcase name="transicionValidaExcedidoAConReserva" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+  <testcase name="addParcelaAceptado" classname="com.acunapuchetavv.PlantacionTests" time="0.001"/>
+</testsuite>
