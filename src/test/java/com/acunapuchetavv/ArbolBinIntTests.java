@@ -1,6 +1,7 @@
 package com.acunapuchetavv;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
@@ -11,6 +12,7 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 import org.mockito.Mockito;
 
 public class ArbolBinIntTests {
@@ -169,5 +171,46 @@ public class ArbolBinIntTests {
         Assertions.assertFalse(pudoInsertar);
     }
 
+    @Test
+    @DisplayName("padre debería encontrar el padra del nodo 5 de la estructura dada, que es 2. Además se comprueba que las llamadas a PadreRecursivo sean correctas")
+    public void padre(){
+        //Creamos el Spy
+        ArbolBinInt ArbolBinarioSpy = spy(ArbolBinInt.class);
+        //Armamos el arbol de forma manual a efectos de usar los nodos posteriormente
+        NodoArbolInt nodoRaiz = new NodoArbolInt(1);
+        NodoArbolInt nodoDos = new NodoArbolInt(2);
+        NodoArbolInt nodoTres = new NodoArbolInt(3);
+        NodoArbolInt nodoCuatro = new NodoArbolInt(4);
+        NodoArbolInt nodoCinco = new NodoArbolInt(5);
+        NodoArbolInt nodoSeis = new NodoArbolInt(6);
+        NodoArbolInt nodoSiete = new NodoArbolInt(7);
+        nodoRaiz.setIzquierdo(nodoDos);
+        nodoRaiz.setDerecho(nodoTres);
+        nodoDos.setIzquierdo(nodoCuatro);
+        nodoDos.setDerecho(nodoCinco);
+        nodoTres.setIzquierdo(nodoSeis);
+        nodoTres.setDerecho(nodoSiete);
+        ArbolBinarioSpy.raiz = nodoRaiz;
+
+        //Testear metodo padreRecursivo
+        int padreDeCinco = ArbolBinarioSpy.padre(5);
+        //Se verifica que efectivamente el padre sea 2
+        Assertions.assertEquals(2, padreDeCinco);
+        //Se verifica la cantidad de llamadas del método recursivo
+        verify(ArbolBinarioSpy, times(7)).padreRecursivo(anyInt(), any()); //Para mejora
+        //verify(ArbolBinarioSpy, times(14)).padreRecursivo(anyInt(), any()); Para original (donde nos dimos cuenta de que llamaba de forma innecesaria!!)
+        //Se verifica el orden de esos llamados y con los parámetros correctos
+        InOrder inOrder = inOrder(ArbolBinarioSpy);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoRaiz);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoTres);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoSiete);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, null);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoSeis);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, null);
+        inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoDos);
+
+        
+
+    }
 
 }

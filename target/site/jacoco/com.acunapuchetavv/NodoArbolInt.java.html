@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NodoArbolInt.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">testingunidad</a> &gt; <a href="index.source.html" class="el_package">com.acunapuchetavv</a> &gt; <span class="el_source">NodoArbolInt.java</span></div><h1>NodoArbolInt.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.acunapuchetavv;
+
+public class NodoArbolInt {
+
+    private int elemento;
+    private NodoArbolInt izquierdo;
+    private NodoArbolInt derecho;
+
+<span class="fc" id="L14">    public NodoArbolInt(int elem) {</span>
+<span class="fc" id="L15">        this.elemento = elem;</span>
+<span class="fc" id="L16">        this.izquierdo = null;</span>
+<span class="fc" id="L17">        this.derecho = null;</span>
+<span class="fc" id="L18">    }</span>
+
+<span class="nc" id="L20">    public NodoArbolInt() {</span>
+<span class="nc" id="L21">        this.elemento = Integer.MAX_VALUE;</span>
+<span class="nc" id="L22">        this.izquierdo = null;</span>
+<span class="nc" id="L23">        this.derecho = null;</span>
+<span class="nc" id="L24">    }</span>
+
+    public void setDerecho(NodoArbolInt der) {
+<span class="fc" id="L27">        this.derecho = der;</span>
+<span class="fc" id="L28">    }</span>
+
+    public void setIzquierdo(NodoArbolInt izq) {
+<span class="fc" id="L31">        this.izquierdo = izq;</span>
+
+<span class="fc" id="L33">    }</span>
+
+    public void setElemento(int elem) {
+<span class="nc" id="L36">        this.elemento = elem;</span>
+<span class="nc" id="L37">    }</span>
+
+    public NodoArbolInt getIzquierdo() {
+<span class="fc" id="L40">        return this.izquierdo;</span>
+    }
+
+    public NodoArbolInt getDerecho() {
+<span class="fc" id="L44">        return this.derecho;</span>
+    }
+
+    public int getElem() {
+<span class="fc" id="L48">        return this.elemento;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

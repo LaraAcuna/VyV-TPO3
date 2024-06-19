@@ -1,0 +1,7 @@
+!target
+
+target/*
+!target/jacoco.exec
+!target/site/
+
+pom copy.xml

@@ -21,9 +21,9 @@ public class ArbolBinInt {
                     nodoPadre.setIzquierdo(new NodoArbolInt(elem));
                 } else if (pos == 'd' && nodoPadre.getDerecho() == null) {
                     nodoPadre.setDerecho(new NodoArbolInt(elem));
-                }/*else if(pos != 'i' && pos != 'd'){
+                }else if(pos != 'i' && pos != 'd'){
                     exito = false;
-                }*/
+                }
             } else {
                 exito = false;
             }
@@ -33,7 +33,7 @@ public class ArbolBinInt {
 
     //Se cambió de Private a Public para poder testear
     public NodoArbolInt obtenerNodo(NodoArbolInt n, int buscado) {
-        /*NodoArbolInt resultado = null;
+        NodoArbolInt resultado = null;
         if (n != null) {
             if (n.getElem() == buscado) {
                 resultado = n;
@@ -44,8 +44,7 @@ public class ArbolBinInt {
                 resultado = obtenerNodo(n.getDerecho(), buscado);
             }
         }
-        return resultado;*/
-        return null;
+        return resultado;
     }
 
     public boolean esVacio() {
@@ -62,12 +61,16 @@ public class ArbolBinInt {
         if (padre == null) {
             esPadre = -1;
         } else {
-            esPadre = padreRecursivo(hijo, this.raiz).getElem();
+            //original:
+            //esPadre = padreRecursivo(hijo, this.raiz).getElem();
+            //mejora
+            esPadre = padre.getElem();
         }
         return esPadre;
     }
 
-    private NodoArbolInt padreRecursivo(int elem, NodoArbolInt n) {
+    //Para testear se hizo publico
+    public NodoArbolInt padreRecursivo(int elem, NodoArbolInt n) {
         NodoArbolInt retornar = null;
         if (n != null) {
             if (n.getDerecho() != null) {
