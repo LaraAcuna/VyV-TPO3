@@ -43,8 +43,8 @@ public class ArbolBinIntTests {
         /*
         * Mockeo el Método obtenerNodo para que, cuando se invoque obtenerNodo(<CualquierNodo>, 1)
         * devuelva el nodoUno que se creó al principio.
-        * Para cualquier otro parámetro que no sean esos dos, el comportamiento esta INDEFINIDO,
-        * como si no existiera el método
+        * Para cualquier otro parámetro que no sean esos dos, el comportamiento será el que
+        * esté dentro del cuerpo del método
         */
         when(arbolBinarioSpy.obtenerNodo(any(NodoArbolInt.class), Mockito.eq(1)))
             .thenReturn(nodoUno);
@@ -93,8 +93,8 @@ public class ArbolBinIntTests {
          /*
         * Mockeo el Método obtenerNodo para que, cuando se invoque obtenerNodo(<CualquierNodo>, 3)
         * devuelva el nodoTresMock que se creó al principio.
-        * Para cualquier otro parámetro que no sean esos dos, el comportamiento esta INDEFINIDO,
-        * como si no existiera el método
+        * Para cualquier otro parámetro que no sean esos dos, el comportamiento será el que
+        * esté dentro del cuerpo del método
         */
         when(arbolBinarioSpy.obtenerNodo(any(NodoArbolInt.class), Mockito.eq(3)))
             .thenReturn(nodoTresMock);
@@ -128,7 +128,7 @@ public class ArbolBinIntTests {
     }
 
     @Test
-    @DisplayName("Insertar debería dar FALSE - obtenerNodo Mockeado")
+    @DisplayName("Insertar debería dar FALSE - No se encuentra el padre, obtenerNodo Mockeado")
     public void insertarDaFalse(){
         
         NodoArbolInt nodoUno = new NodoArbolInt(1);
@@ -140,40 +140,70 @@ public class ArbolBinIntTests {
 
         ArbolBinInt spy = spy(ArbolBinInt.class);
         spy.raiz = nodoUno;
-        when(spy.obtenerNodo(any(NodoArbolInt.class), anyInt()))
+        
+        when(spy.obtenerNodo(any(NodoArbolInt.class), Mockito.eq(4)))
            .thenReturn(null);
 
         Boolean pudoInsertar = spy.insertar(4, 6, 'i');
         Assertions.assertFalse(pudoInsertar);
-        
+        verify(spy, times(1)).obtenerNodo(any(NodoArbolInt.class), Mockito.eq(4));
     }
 
-    
     @Test
-    @DisplayName("Insertar debería dar FALSE, se encuentra el nodo pero la posición es invalida")
-    public void insertarDaFalsePosicionLlena(){
+    @DisplayName("Insertar debería dar FALSE, se encuentra el nodo pero la posición ya esta ocupada")
+    public void insertarDaFalsePosicionOcupada(){
         
-        NodoArbolInt nodoUno = new NodoArbolInt(1);
+        NodoArbolInt nodoUnoSpy = spy(NodoArbolInt.class);
         NodoArbolInt nodoDos = new NodoArbolInt(2);
         NodoArbolInt nodoTres = new NodoArbolInt(3);
 
 
-        nodoUno.setIzquierdo(nodoDos);
+        nodoUnoSpy.setIzquierdo(nodoDos);
+        nodoUnoSpy.setDerecho(nodoTres);
+
+        ArbolBinInt arbolBinarioSpy = spy(ArbolBinInt.class);
+        arbolBinarioSpy.raiz = nodoUnoSpy;
+
+        when(arbolBinarioSpy.obtenerNodo(any(NodoArbolInt.class), Mockito.eq(1)))
+            .thenReturn(nodoUnoSpy);
+
+        Boolean pudoInsertar = arbolBinarioSpy.insertar(1, 99, 'i');
+        Assertions.assertEquals(nodoDos, nodoUnoSpy.getIzquierdo());
+        Assertions.assertFalse(pudoInsertar);
+        verify(nodoUnoSpy, times(1)).setIzquierdo(any(NodoArbolInt.class));
+    }
+    
+    @Test
+    @DisplayName("Insertar debería dar FALSE, se encuentra el nodo pero la posición es invalida")
+    public void insertarDaFalsePosicionInvalida(){
+        
+        NodoArbolInt nodoUno = new NodoArbolInt(1);
+        NodoArbolInt nodoDosSpy = spy(NodoArbolInt.class);
+        NodoArbolInt nodoTres = new NodoArbolInt(3);
+
+
+        nodoUno.setIzquierdo(nodoDosSpy);
         nodoUno.setDerecho(nodoTres);
 
         ArbolBinInt spy = spy(ArbolBinInt.class);
         spy.raiz = nodoUno;
 
         when(spy.obtenerNodo(any(NodoArbolInt.class), Mockito.eq(2)))
-            .thenReturn(nodoDos);
+            .thenReturn(nodoDosSpy);
 
         Boolean pudoInsertar = spy.insertar(2, 6, 'a');
         Assertions.assertFalse(pudoInsertar);
+        Assertions.assertEquals(null, nodoDosSpy.getIzquierdo());
+        Assertions.assertEquals(null, nodoDosSpy.getDerecho());
+        verify(nodoDosSpy, never()).setIzquierdo(any(NodoArbolInt.class));
+        verify(nodoDosSpy, never()).setDerecho(any(NodoArbolInt.class));
+
     }
 
+
     @Test
-    @DisplayName("padre debería encontrar el padra del nodo 5 de la estructura dada, que es 2. Además se comprueba que las llamadas a PadreRecursivo sean correctas")
-    public void padre(){
+    @DisplayName("padreRecursivo debería encontrar el padra del nodo 5 de la estructura dada, que es 2. Además se comprueba que las llamadas a PadreRecursivo sean correctas")
+    public void padreRecursivoEncontradoYFuncionamientoCorrecto(){
         //Creamos el Spy
         ArbolBinInt ArbolBinarioSpy = spy(ArbolBinInt.class);
         //Armamos el arbol de forma manual a efectos de usar los nodos posteriormente
@@ -193,13 +223,12 @@ public class ArbolBinIntTests {
         ArbolBinarioSpy.raiz = nodoRaiz;
 
         //Testear metodo padreRecursivo
-        int padreDeCinco = ArbolBinarioSpy.padre(5);
+        NodoArbolInt padreDeCinco = ArbolBinarioSpy.padreRecursivo(5, nodoRaiz);
         //Se verifica que efectivamente el padre sea 2
-        Assertions.assertEquals(2, padreDeCinco);
+        Assertions.assertEquals(nodoDos, padreDeCinco);
         //Se verifica la cantidad de llamadas del método recursivo
-        verify(ArbolBinarioSpy, times(7)).padreRecursivo(anyInt(), any()); //Para mejora
-        //verify(ArbolBinarioSpy, times(14)).padreRecursivo(anyInt(), any()); Para original (donde nos dimos cuenta de que llamaba de forma innecesaria!!)
-        //Se verifica el orden de esos llamados y con los parámetros correctos
+        verify(ArbolBinarioSpy, times(7)).padreRecursivo(anyInt(), any()); 
+        //Se verifica que el orden de llamadas sea el establecido
         InOrder inOrder = inOrder(ArbolBinarioSpy);
         inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoRaiz);
         inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoTres);
@@ -208,9 +237,6 @@ public class ArbolBinIntTests {
         inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoSeis);
         inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, null);
         inOrder.verify(ArbolBinarioSpy).padreRecursivo(5, nodoDos);
-
-        
-
     }
 
 }
